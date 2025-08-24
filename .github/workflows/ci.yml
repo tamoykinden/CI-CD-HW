@@ -43,3 +43,11 @@ jobs:
 
       - name: Установить зависимости
         run: pip install -r requirements.txt
+
+      - name: Деплой
+        uses: appleboy/ssh-actions@master
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: expect /home/denistamoykin/CI-CD-HW/deploy.exp

@@ -29,4 +29,4 @@ class StockViewSet(ModelViewSet):
     pagination_class = LimitOffsetPagination
 
 def return_priv(request):
-    return HTTPResponse('privet')
+    return HTTPResponse('privet2')
